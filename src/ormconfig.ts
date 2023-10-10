@@ -11,4 +11,5 @@ export const AppDataSource = new DataSource({
   database: "loteriadb",
   synchronize: true,
   entities: [Card, Table],
+  logging: true,
 });

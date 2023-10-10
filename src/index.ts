@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import app from "./app";
 import { PORT } from "./config";
-import { AppDataSource } from "./db";
+import { AppDataSource } from "./ormconfig";
 
 async function main() {
   try {
