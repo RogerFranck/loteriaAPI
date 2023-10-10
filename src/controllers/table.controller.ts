@@ -33,7 +33,7 @@ export const getTable = async (req: Request, res: Response) => {
 };
 
 export const createTable = async (req: Request, res: Response) => {
-  const { cant } = req.params;
+  const { cant } = req.body;
   const cards = await Card.find();
   const newArrayCards = [...cards];
 
@@ -53,7 +53,7 @@ export const createTable = async (req: Request, res: Response) => {
     await table.save();
   }
 
-  res.json({ deck: tableResponse });
+  res.json(tableResponse.map((e)=>({cards: e})));
 }
 
 

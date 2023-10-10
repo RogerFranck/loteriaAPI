@@ -6,7 +6,7 @@ const apiRoute = '/table'
 
 router.get(apiRoute, getTables)
 router.get(`${apiRoute}/:id`, getTable)
-router.post(`${apiRoute}/:cant`, createTable)
+router.post(apiRoute, createTable)
 router.put(`${apiRoute}/:id`, updateTable)
 router.delete(`${apiRoute}/:id`, deleteTable)
 
