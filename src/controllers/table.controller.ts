@@ -37,6 +37,11 @@ export const createTable = async (req: Request, res: Response) => {
   const cards = await Card.find();
   const newArrayCards = [...cards];
 
+  if (cards.length < 16) {
+    return res.status(500).json({ message: "not enough cards" });
+    return
+  }
+
   const tableResponse: Card[][] = [];
   for (let i = 0; i < Number(cant); i++) {
     let deck: Card[];
